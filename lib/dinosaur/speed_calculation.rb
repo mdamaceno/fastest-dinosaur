@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Dinosaur
   class SpeedCalculation
     attr_reader :db_context

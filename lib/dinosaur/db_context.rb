@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Dinosaur
   class DbContext
     COLLECTIONS_PATH = File.join(
