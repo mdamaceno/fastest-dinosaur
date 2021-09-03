@@ -4,6 +4,9 @@ source "https://rubygems.org"
 
 gem 'zeitwerk'
 
+group :develepment do
+  gem 'rubocop'
+end
 group :develepment, :test do
   gem 'pry'
 end
