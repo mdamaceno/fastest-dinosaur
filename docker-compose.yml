@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  faster_dinosaur:
+    build: .
+    command: "bundle exec ruby app.rb"
+  test_faster_dinosaur:
+    build: .
+    command: "bundle exec rspec"
+
