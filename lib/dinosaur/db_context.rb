@@ -10,12 +10,16 @@ module Dinosaur
         stances.map { |s| s[:name] }.include? dino[:name]
       end
       dinosaur_diets.map do |dino|
-        stance = stances.detect { |b| b[:name] == d[:name] }
+        stance = stances.detect { |b| b[:name] == dino[:name] }
         dino.tap do |d|
           d[:stride_length] = stance[:stride_length]
           d[:stance] = stance[:stance]
         end
       end
+    end
+
+    def bipedal
+      dinosaurs.select { |s| s[:stance] === 'bipedal' }
     end
 
     private

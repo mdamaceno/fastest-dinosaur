@@ -9,7 +9,7 @@ module Dinosaur
     end
 
     def faster
-      bipedal.map do |dino|
+      @db_context.bipedal.map do |dino|
         dino[:velocity] = velocity(dino[:stride_length], dino[:leg_length])
         dino
       end.sort_by { |dino| dino[:velocity] }.reverse
@@ -19,10 +19,6 @@ module Dinosaur
 
     def velocity(stride_length, leg_length)
       ((stride_length / leg_length) - 1) * Math.sqrt((leg_length * GRAVITATIONAL_CONSTANT))
-    end
-
-    def bipedal
-      @db_context.dinosaurs.select { |s| s[:stance] === 'bipedal' }
     end
   end
 end
