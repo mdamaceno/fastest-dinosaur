@@ -12,6 +12,8 @@ end
 
 require 'rubygems'
 require 'bundler'
+require 'csv'
+require 'singleton'
 
 Bundler.require(:default)
 
@@ -26,7 +28,7 @@ loader.setup
 
 module Dinosaur
   class Application
-    include Singleton
+    include ::Singleton
 
     ROOT_PATH = File.expand_path('../', __dir__)
     ENVIRONMENT = ENV['APP_ENV']
